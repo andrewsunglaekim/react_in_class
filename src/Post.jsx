@@ -6,7 +6,7 @@ class Post extends Component {
     let {title, author, body, comments} = this.props.pizza
     let commentComps = comments.map((comment, i) => {
       return(
-        <Comment key={i} commentBody={comment}/>
+        <Comment commentBody={comment}/>
       )
      })
     return(
