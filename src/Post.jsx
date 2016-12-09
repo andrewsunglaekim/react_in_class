@@ -4,7 +4,11 @@ import Comment from './Comment'
 class Post extends Component {
   render() {
     let {title, author, body, comments} = this.props.pizza
-    console.log(comments)
+    let commentComps = comments.map((comment, i) => {
+      return(
+        <Comment key={i} commentBody={comment}/>
+      )
+     })
     return(
       <div>
         <h1>{title}</h1>
@@ -13,9 +17,7 @@ class Post extends Component {
           {body}
         </div>
         <div className="comments">
-          <Comment commentBody={comments[0]} />
-          <Comment commentBody={comments[1]} />
-          <Comment commentBody={comments[2]} />
+          {commentComps}
         </div>
       </div>
     )
